@@ -1,0 +1,5 @@
+const ERRORS_CODE = {
+    'DATA_SHOULD_BE_STRING': 'DATA SHOULD BE STRING',
+};
+
+export default ERRORS_CODE;
