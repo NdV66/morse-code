@@ -1,14 +1,14 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
+import { Container, Row, Col } from 'reactstrap';
 
 @inject('translatorStore')
 @observer
 class TranslatorPage extends React.Component {
     render() {
-        console.log(this.props.translatorStore);
-        return <div>
-            TEEEESST
-        </div>;
+        return <Container fluid className='test'>
+            translatorPage test
+        </Container>;
     }
 }
 

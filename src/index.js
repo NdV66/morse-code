@@ -3,5 +3,8 @@ import ReactDOM from 'react-dom';
 import App from './ui/App';
 import * as serviceWorker from './serviceWorker';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './scss/style.scss';
+
 ReactDOM.render(<App />, document.getElementById('root'));
 serviceWorker.unregister();

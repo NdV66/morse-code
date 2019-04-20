@@ -1,15 +1,19 @@
 import { observable, computed } from 'mobx';
 
 class TranslatorStore {
-    @observable normalText = '';
+    @observable
+    normalText = '';
 
-    @observable morseCode = '';
+    @observable
+    morseCode = '';
 
-    @computed get translatedToMorse() {
+    @computed
+    get translatedToMorse() {
         return 'Hehehe morsik xD';
     }
 
-    @computed get translatedToNormalText() {
+    @computed
+    get translatedToNormalText() {
         return '--> normalny nudny text';
     }
 }
