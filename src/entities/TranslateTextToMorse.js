@@ -1,6 +1,6 @@
-import MorseCode, { CHAR_NOT_EXISTS } from "../models/MorseCode";
+import MorseCode, { CHAR_NOT_EXISTS } from "./consts/MorseCodeMapping";
 
-class MessageController {
+class TextToMorseTranslator {
     /**
      * Translate "normal" text to morse code.
      * @param {string} textMessage
@@ -19,25 +19,14 @@ class MessageController {
     }
 
     /**
-     * Join morseCode array to text using separator.
-     * @param {Array} morseCode
-     * @param {string} separator
-     * @return {string} joined morse code text
-     */
-    _morseCodeToText(morseCode, separator = ' ') {
-       return morseCode.join(separator);
-    }
-
-    /**
      * Map "normal" text to morse code and save it in param object.
      * @param {Message} Message
      */
     translateTextToMorseCode(Message) {
         const translated = this._mapTextToMorse(Message.textMessage);
-        const morseText = this._morseCodeToText(translated);
-        Message.morseText = morseText;
+        Message.morseText = translated;
         return Message;
     }
 }
 
-export const messageController = new MessageController();
+export const textToMorseTranslator = new TextToMorseTranslator();
