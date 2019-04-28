@@ -11,8 +11,12 @@ export default class MorseMessage extends Message {
         return this._text;
     }
 
+    /**
+     * Save morse code (as string)
+     * @param {string} text - morse code as string (only \s, - and . allowed)
+     */
     set text(text) {
-        if(MORSE_CODE_PATTERN.test(text)) {
+        if(text === '' || MORSE_CODE_PATTERN.test(text)) {
             this._text = text;
         } else {
             throw new Error(ERRORS_CODE.DATA_SHOULD_BE_MORSE);

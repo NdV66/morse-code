@@ -51,12 +51,10 @@ const MorseCode = {
 
 export const CHAR_NOT_EXISTS = 'CHAR_NOT_EXISTS';
 export const ONE_DOT_TIME_MS = 100;
-export const ONE_DOT_CHAR = ' ';
+export const SPACE_BETWEEN_CHARS = ' ';
 export const CHAR_IN_ELEMETS_SPACE = ONE_DOT_TIME_MS;
 export const CHAR_SPACE = 3 * ONE_DOT_TIME_MS;
 export const WORD_SPACE = 7 * ONE_DOT_TIME_MS;
-export const MORSE_CODE_PATTERN = /^(-|\.|\s)*$/;
-// export const MORSE_CODE_PATTERN = /^(-|\.)+(-|\.|\s)$/;
-
+export const MORSE_CODE_PATTERN = /^((-|\.)+((-|\.)+|\s{1})?)+$/g;
 
 export default MorseCode;

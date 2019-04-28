@@ -2,10 +2,12 @@ import MorseMessage from '../entities/models/MorseMessage';
 import ERRORS_CODE from '../entities/consts/ErrorsCode';
 
 const MORSE = '-- --- .-. ... .';
-const UNCORRECT_MORSE = '-- aaa';
-const UNCORRECT_MORSE_TOO_MUCH_SPACES = '--  --';
+const UNCORRECT_MORSE_WITH_OTHER_CHARS = '-- aaa';
+const UNCORRECT_MORSE_TOO_MUCH_SPACES = '-- ---  .-. ... .';
 
-describe('Save data to MorseMessage', () => {
+const prepareTitleFOrUncorrectIt = (unorrectText) => `Should not save uncorrect morse message [${unorrectText}]`;
+
+xdescribe('Save data to MorseMessage', () => {
     let message = null;
 
     beforeEach(() => {
@@ -23,8 +25,13 @@ describe('Save data to MorseMessage', () => {
         expect(message.text).toEqual(empty);
     });
 
-    it(`Should not save uncorrect morse message [${UNCORRECT_MORSE}]`, () => {
-        expect(() => message.text = UNCORRECT_MORSE)
+    it(prepareTitleFOrUncorrectIt(UNCORRECT_MORSE_TOO_MUCH_SPACES), () => {
+        expect(() => message.text = UNCORRECT_MORSE_TOO_MUCH_SPACES)
+        .toThrowError(new Error(ERRORS_CODE.DATA_SHOULD_BE_MORSE));
+    });
+
+    it(prepareTitleFOrUncorrectIt(UNCORRECT_MORSE_WITH_OTHER_CHARS), () => {
+        expect(() => message.text = UNCORRECT_MORSE_WITH_OTHER_CHARS)
         .toThrowError(new Error(ERRORS_CODE.DATA_SHOULD_BE_MORSE));
     });
 });

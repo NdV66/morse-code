@@ -1,4 +1,6 @@
-import MorseCode, { CHAR_NOT_EXISTS } from "./consts/MorseCodeMapping";
+import MorseCode, { CHAR_NOT_EXISTS, SPACE_BETWEEN_CHARS } from './consts/MorseCodeMapping';
+import ERRORS_CODE from './consts/ErrorsCode';
+import MorseMessage from './models/MorseMessage';
 
 class TextToMorseTranslator {
     /**
@@ -12,7 +14,11 @@ class TextToMorseTranslator {
 
         for(const char of textMessageChars) {
             const morseCodeChar = MorseCode[char.toUpperCase()];
-            translated.push(morseCodeChar || CHAR_NOT_EXISTS);
+            if (!morseCodeChar) {
+                throw new Error(ERRORS_CODE.CHAR_DOESNT_EXIST);
+            }
+            translated.push(morseCodeChar);
+            translated.push(SPACE_BETWEEN_CHARS);
         }
 
         return translated;
@@ -20,12 +26,11 @@ class TextToMorseTranslator {
 
     /**
      * Map "normal" text to morse code and save it in param object.
-     * @param {Message} Message
+     * @param {Message} textMessage - object from class extends class Message
      */
-    translateTextToMorseCode(Message) {
-        const translated = this._mapTextToMorse(Message.textMessage);
-        Message.morseText = translated;
-        return Message;
+    translateTextToMorseCode(textMessage) {
+        const translated = this._mapTextToMorse(textMessage.text);
+        return new MorseMessage(translated);
     }
 }
 

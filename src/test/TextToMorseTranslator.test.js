@@ -1,17 +1,19 @@
-import Message from '../entities/models/Message';
 import ERRORS_CODE from '../entities/consts/ErrorsCode';
-import {textToMorseTranslator} from '../entities/TranslateTextToMorse';
+import {textToMorseTranslator} from '../entities/TextToMorseTranslator';
+import TextMessage from '../entities/models/TextMessage';
 
 const TEXT = 'TEXT';
 const MORSE = '- . -..- -';
 
 describe('Translate text to morse code', () => {
+    let textMessage = null;
+
     beforeEach(() => {
-        message = new Message(TEXT);
+        textMessage = new TextMessage(TEXT);
     });
 
-    xit(`Should translate ${TEXT} to ${MORSE}`, () => {
-        textToMorseTranslator.translateTextToMorseCode(message);
-        expect();
+    it(`Should translate ${TEXT} to ${MORSE}`, () => {
+        const morseMessage = textToMorseTranslator.translateTextToMorseCode(message);
+        expect(morseMessage.text).toEqual(MORSE);
     });
 });
