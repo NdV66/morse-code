@@ -1,0 +1,16 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/generic';
+
+.text_area {
+    $height: 200px;
+    width: 100%;
+    height: $height;
+    border: 1px solid $THEME_COLOR_PRIMARY;
+    padding: $BASE_FONT_SIZE * 0.3 $BASE_FONT_SIZE * 0.5;
+}
+
+.translator_container {
+    @extend .bg-light;
+    padding-top: $NAVBAR_HEIGHT + $BASE_PADDING;
+    padding-bottom: $BASE_PADDING;
+}

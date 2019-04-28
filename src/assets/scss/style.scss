@@ -1,0 +1,45 @@
+@import './variables';
+@import './generic';
+
+
+@font-face {
+    font-family: Comfortaa;
+    src: url(../fonts/Comfortaa-Regular.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Comfortaa;
+    src: url(../fonts/Comfortaa-Light.ttf);
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: Comfortaa;
+    src: url(../fonts/Comfortaa-Bold.ttf);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Amatic;
+    src: url(../fonts/AmaticSC-Regular.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Amatic;
+    src: url(../fonts/AmaticSC-Bold.ttf);
+    font-weight: 600;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    font-size: $BASE_FONT_SIZE;
+    font-family: Comfortaa;
+    font-weight: 100;
+    line-height: 21pt;
+    background-color: $WHITE;
+}

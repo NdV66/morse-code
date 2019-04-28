@@ -1,0 +1,42 @@
+.active-generic {
+    background-color: $THEME_COLOR_PRIMARY !important;
+    border-radius: .25rem;
+    color: $THEME_COLOR_TEXT !important;
+}
+
+.active-hover {
+    background-color: $THEME_COLOR_LIGHT;
+    border-radius: .25rem;
+    border: 1px solid $THEME_COLOR_PRIMARY;
+    margin: 0px;
+    color: $THEME_COLOR_PRIMARY;
+}
+
+.text-danger {
+    color: $DANGER;
+}
+
+.rounded {
+    border-radius: 50% !important;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.no-spaces {
+    @extend .no-margin;
+    @extend .no-padding;
+}
+
+.bg-light {
+    background-color: $BACKGROUND_COLOR;
+}
+
+.bg-dark {
+    background-color: $BACKGROUND_COLOR_ACTIVE;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import {ELEMENTS_ID} from '../../models/Paths';
+import {ELEMENTS_ID} from '../../entities/consts/Paths';
 
 class AboutPage extends React.Component {
     render() {

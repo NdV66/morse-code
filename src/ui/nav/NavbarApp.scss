@@ -1,0 +1,47 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/generic';
+
+.navbar {
+    background-color: $THEME_COLOR_ACTIVE_RGBA;
+    padding: 0px;
+    font-family: Comfortaa;
+    border-bottom: 1px solid $THEME_COLOR_PRIMARY;
+
+    a:active, a:visited,
+    a:link, a:hover, a {
+        color: $THEME_COLOR_PRIMARY;
+        border-radius: .25rem;
+    }
+}
+
+.navbar-brand {
+    font-size: $BASE_FONT_SIZE * 1.3;
+}
+
+.navbar-nav,
+.navbar-nav .icon  {
+    font-size: $BASE_FONT_SIZE * 1.1;
+}
+
+.nav-item {
+    margin-top: 2px;
+    border: 1px solid $THEME_COLOR_LIGHT;
+}
+
+.active {
+    @extend .active-generic;
+}
+
+.nav-link {
+    padding: 0.6rem !important;
+    margin: 1px;
+
+    &:not(.active):hover {
+        @extend .active-hover;
+    }
+}
+
+.active:hover {
+    border: none;
+    margin: 1px;
+}

@@ -6,6 +6,7 @@ class TextToMorseTranslator {
     /**
      * Translate "normal" text to morse code.
      * @param {string} textMessage
+     * @throws {Error} CHAR_DOESNT_EXIST
      * @returns {Array} array where each element is one sign from morse code
      */
     _mapTextToMorse(textMessage) {

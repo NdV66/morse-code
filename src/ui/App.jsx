@@ -1,15 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Provider } from 'mobx-react';
-import { Container, Row, Col } from 'reactstrap';
-import TranslatorPage from './pages/TranslatorPage';
+import { Container } from 'reactstrap';
+import TranslatorPage from './pages/translatorPage/TranslatorPage';
 import NavbarApp from './nav/NavbarApp';
-import PATHS from '../models/Paths';
 import translatorStore from '../stores/translatorStore';
 import navbarStore from '../stores/navbarStore';
 import AboutPage from './pages/AboutPage';
 
-const App = () => <Container fluid>
+const App = () => <Container fluid className='no-spaces'>
         <Provider
             translatorStore={translatorStore}
             navbarStore={navbarStore}>

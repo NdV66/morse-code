@@ -1,4 +1,5 @@
 import { observable, computed } from 'mobx';
+import {textToMorseTranslator} from '../entities/TextToMorseTranslator';
 
 class TranslatorStore {
     @observable
@@ -7,14 +8,13 @@ class TranslatorStore {
     @observable
     morseCode = '';
 
+    /**
+     * @throws {Error} CHAR_DOESNT_EXIST from translator
+     * @return {MorseMessage} morseMessage as string
+     */
     @computed
-    get translatedToMorse() {
-        return 'Hehehe morsik xD';
-    }
-
-    @computed
-    get translatedToNormalText() {
-        return '--> normalny nudny text';
+    get translatedToMorseCode() {
+        return textToMorseTranslator.translateTextToMorseCode(this.normalText);
     }
 }
 

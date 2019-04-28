@@ -2,6 +2,7 @@ export const ELEMENTS_ID = {
     HOME: 'home',
     ABOUT: 'about',
     HELP: 'help',
+    TRANSLATOR: 'translator',
 };
 
 const HOME = '/';
