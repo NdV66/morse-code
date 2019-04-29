@@ -3,6 +3,7 @@
 
 .text_area {
     $height: 200px;
+    @extend .radius;
     width: 100%;
     height: $height;
     border: 1px solid $THEME_COLOR_PRIMARY;
@@ -10,7 +11,23 @@
 }
 
 .translator_container {
+    $greyscale: 75%;
     @extend .bg-light;
     padding-top: $NAVBAR_HEIGHT + $BASE_PADDING;
     padding-bottom: $BASE_PADDING;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../../../assets/images/bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        filter: brightness($greyscale);
+    }
 }
+

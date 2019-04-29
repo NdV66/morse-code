@@ -1,15 +1,13 @@
 .active-generic {
-    background-color: $THEME_COLOR_PRIMARY !important;
-    border-radius: .25rem;
-    color: $THEME_COLOR_TEXT !important;
+    background-color: $THEME_COLOR_ACTIVE !important;
 }
 
 .active-hover {
-    background-color: $THEME_COLOR_LIGHT;
+    @extend .no-margin;
+    background-color: $THEME_COLOR_PRIMARY !important;
     border-radius: .25rem;
     border: 1px solid $THEME_COLOR_PRIMARY;
-    margin: 0px;
-    color: $THEME_COLOR_PRIMARY;
+    color: $THEME_COLOR_TEXT;
 }
 
 .text-danger {
@@ -39,4 +37,41 @@
 
 .bg-dark {
     background-color: $BACKGROUND_COLOR_ACTIVE;
+}
+
+.radius {
+    border-radius: $RADIUS !important;
+}
+
+.btn {
+    @extend .radius;
+    border: none;
+    outline: none !important;
+    margin: 1px;
+    padding: 10px;
+
+    &:hover, &:active, &:focus {
+        outline: none !important;
+    }
+}
+
+.btn-primary {
+    @extend .active-hover;
+    border: 1px solid $THEME_COLOR_PRIMARY !important;
+
+    &:hover, &:active {
+        box-shadow: none !important;
+        border: 1px solid $THEME_COLOR_PRIMARY !important;
+        @extend .active-generic;
+    }
+}
+
+.btn-danger {
+    background-color: $DANGER;
+    color: $THEME_COLOR_TEXT;
+
+    &:hover, &:active {
+        background-color: $DANGER_ACTIVE;
+        color: $THEME_COLOR_TEXT;
+    }
 }

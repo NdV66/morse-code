@@ -1,7 +1,7 @@
 import React from 'react';
 import { action } from 'mobx';
 import { inject, observer } from 'mobx-react';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Button } from 'reactstrap';
 import TEXTS from '../../../entities/consts/Texts';
 import styles from './translatorPageStyle.module.scss';
 
@@ -16,6 +16,12 @@ const TextArea = (props) => <div>
     />
 </div>;
 
+const ButtonPanel = (props) => <div className='mt-3 mb-3'>
+    <Button onClick={props.onClickTranslateButton} color='primary'>{TEXTS.TRANSLATE}</Button>
+</div>;
+
+// const errorPopup = (props) =>
+
 @inject('translatorStore')
 @observer
 class TranslatorPage extends React.Component {
@@ -27,6 +33,20 @@ class TranslatorPage extends React.Component {
     @action.bound
     _handleMorseCodeTextAreaChange(event) {
         this.props.translatorStore.morseCode = event.target.value;
+    }
+
+    @action.bound
+    _onClickTranslateButton() {
+        try {
+            this.props.translatorStore.translateTextToMorseCode();
+        } catch(error) {
+            console.log(error);
+            this._handleError(error);
+        }
+    }
+
+    _handleError(error) {
+
     }
 
     render() {
@@ -42,6 +62,9 @@ class TranslatorPage extends React.Component {
                     value={store.normalText}
                     placeholder={TEXTS.TEXT_AREA_PLACEHOLDER}
                     onChange={this._handleNormalTextAreaChange}
+                />
+                <ButtonPanel
+                    onClickTranslateButton={this._onClickTranslateButton}
                 />
                 <TextArea
                     id={'morseCodeText'}

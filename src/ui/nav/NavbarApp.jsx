@@ -7,7 +7,7 @@ import PATHS from '../../entities/consts/Paths';
 import './NavbarApp.scss';
 import styles from './NavbarApp.module.scss';
 
-const NavbarItem = (props)=> <NavItem  className='ml-3'>
+const NavbarItem = (props)=> <NavItem  className='mr-3'>
     <Link smooth to={PATHS[props.name]}>{TEXTS[props.name]}</Link>
 </NavItem>;
 

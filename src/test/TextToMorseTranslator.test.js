@@ -3,6 +3,7 @@ import {textToMorseTranslator} from '../entities/TextToMorseTranslator';
 import TextMessage from '../entities/models/TextMessage';
 
 const TEXT = 'TEXT';
+const TEXT_SMALL_CASE = 'text';
 const MORSE = '- . -..- -';
 const MORSE_ARRAY = ['-', '.', '-..-', '-'];
 const TEXT_WITH_DOESNT_EXIST_CHAR_IN_MORSE = 'mątwa';
@@ -15,6 +16,13 @@ describe('Translate text to morse code', () => {
     });
 
     it(`Should translate ${TEXT} to ${MORSE}`, () => {
+        const morseMessage = textToMorseTranslator.translateTextToMorseCode(textMessage);
+        expect(morseMessage.text).toEqual(MORSE);
+    });
+
+
+    it(`Should translate ${TEXT_SMALL_CASE} to ${MORSE}`, () => {
+        textMessage.text = TEXT_SMALL_CASE;
         const morseMessage = textToMorseTranslator.translateTextToMorseCode(textMessage);
         expect(morseMessage.text).toEqual(MORSE);
     });
