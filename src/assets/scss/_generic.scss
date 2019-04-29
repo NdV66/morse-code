@@ -1,9 +1,10 @@
+@import './variables';
+
 .active-generic {
     background-color: $THEME_COLOR_ACTIVE !important;
 }
 
 .active-hover {
-    @extend .no-margin;
     background-color: $THEME_COLOR_PRIMARY !important;
     border-radius: .25rem;
     border: 1px solid $THEME_COLOR_PRIMARY;
@@ -49,6 +50,7 @@
     outline: none !important;
     margin: 1px;
     padding: 10px;
+    font-size: $BASE_FONT_SIZE;
 
     &:hover, &:active, &:focus {
         outline: none !important;
@@ -59,7 +61,7 @@
     @extend .active-hover;
     border: 1px solid $THEME_COLOR_PRIMARY !important;
 
-    &:hover, &:active {
+    &:hover, &:active, &:focus {
         box-shadow: none !important;
         border: 1px solid $THEME_COLOR_PRIMARY !important;
         @extend .active-generic;
@@ -70,8 +72,26 @@
     background-color: $DANGER;
     color: $THEME_COLOR_TEXT;
 
-    &:hover, &:active {
+    &:hover, &:active, &:focus {
         background-color: $DANGER_ACTIVE;
         color: $THEME_COLOR_TEXT;
     }
+}
+
+.common-padding {
+    padding: $SMALL_PADDING $MEDIUM_PADDING;
+}
+
+.h3-light {
+    @extend .no-margin;
+    font-size: $BASE_FONT_SIZE * 1.2;
+    color: $THEME_COLOR_ACTIVE;
+    width: 100%;
+    padding-bottom: $MEDIUM_PADDING;
+}
+
+.icon-style {
+    color: $THEME_COLOR_TEXT;
+    font-size: $BASE_FONT_SIZE * 1.4;
+    padding-right: $SMALL_PADDING;
 }

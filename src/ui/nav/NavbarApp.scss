@@ -24,12 +24,20 @@
 
 .nav-item {
     $navItemSpace: $BASE_FONT_SIZE * 0.5;
-    padding-top: $navItemSpace;
-    padding-bottom: $navItemSpace;
+    padding: $navItemSpace;
+
+    &:hover {
+        background: $THEME_COLOR_ACTIVE;
+    }
 }
 
 .active {
     @extend .active-generic;
+}
+
+.active:hover {
+    border: none;
+    margin: 1px;
 }
 
 .nav-link {
@@ -39,9 +47,4 @@
     &:not(.active):hover {
         @extend .active-hover;
     }
-}
-
-.active:hover {
-    border: none;
-    margin: 1px;
 }

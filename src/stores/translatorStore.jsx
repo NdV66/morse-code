@@ -12,6 +12,9 @@ class TranslatorStore {
     @observable
     isErrorPopupShowed = false;
 
+    @observable
+    isCommonTextAreaFirst = true;
+
     /**
      * @throws {Error} CHAR_DOESNT_EXIST from translator
      * @return {MorseMessage} morseMessage as string
