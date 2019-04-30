@@ -1,35 +1,11 @@
 import React from 'react';
 import { action } from 'mobx';
 import { inject, observer } from 'mobx-react';
-import { Container, Row, Col, Button } from 'reactstrap';
-import { MdAutorenew, MdFavoriteBorder } from 'react-icons/md';
+import { Container, Col } from 'reactstrap';
+import { TextArea } from './TextArea';
+import { ButtonPanel } from './ButtonPanel';
 import TEXTS from '../../../entities/consts/Texts';
 import styles from './translatorPageStyle.module.scss';
-
-const TextArea = (props) => <div>
-    <h3 className='h3-light'>{props.title}</h3>
-    <textarea
-        className={styles.text_area}
-        id={props.id}
-        name={props.id}
-        value={props.value}
-        onChange={props.onChange}
-        placeholder={props.placeholder}
-    />
-</div>;
-
-const ButtonPanel = (props) => <div className='mt-3 mb-1 text-right'>
-    <Button onClick={props.onClickTranslateButton} color='primary'>
-        <MdFavoriteBorder />
-        {TEXTS.TRANSLATE}
-    </Button>
-    <Button onClick={props.onClickSwapButton} color='primary'>
-        <MdAutorenew />
-        {TEXTS.SWAP}
-    </Button>
-</div>;
-
-// const errorPopup = (props) =>
 
 @inject('translatorStore')
 @observer
@@ -47,7 +23,7 @@ class TranslatorPage extends React.Component {
     @action.bound
     _onClickTranslateButton() {
         try {
-            this.props.translatorStore.translateTextToMorseCode();
+            this.props.translatorStore.translate();
         } catch(error) {
             console.log(error);
             this._handleError(error);
@@ -65,27 +41,32 @@ class TranslatorPage extends React.Component {
     }
 
     _renderNormalTextArea(store) {
+        const id = 'normalText';
         return <TextArea
-            id={'normalText'}
+            id={id}
             value={store.normalText}
             placeholder={TEXTS.TEXT_AREA_PLACEHOLDER}
             onChange={this._handleNormalTextAreaChange}
             title={TEXTS.TEXT_LABEL}
+            key={id}
         />;
     }
 
     _renderMorseTextArea(store) {
+        const id = 'morseCodeText';
         return <TextArea
-            id={'morseCodeText'}
+            id={id}
             value={store.morseCode}
             placeholder={TEXTS.MORSE_AREA_PLACEHOLDER}
             onChange={this._handleMorseCodeTextAreaChange}
             title={TEXTS.MORSE_LABEL}
+            key='id'
         />;
     }
 
     _renderButtonPanel() {
         return <ButtonPanel
+            key='buttonPanel'
             onClickTranslateButton={this._onClickTranslateButton}
             onClickSwapButton={this._onClickSwapButton}
         />;

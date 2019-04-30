@@ -38,7 +38,7 @@ class TextToMorseTranslator {
      * @param {Message} textMessage - object from class extends class Message
      * @return {Array} morseCode
      */
-    translateTextToMorseCode(textMessage, joinToString = true) {
+    translate(textMessage, joinToString = true) {
         let translated = this._mapTextToMorse(textMessage.text);
         translated = joinToString ? this._joinMorseCodeFromArray(translated) : translated;
         return new MorseMessage(translated);

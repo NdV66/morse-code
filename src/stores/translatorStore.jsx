@@ -22,11 +22,11 @@ class TranslatorStore {
     @computed
     get translatedToMorseCode() {
         const message = new TextMessage(this.normalText);
-        return textToMorseTranslator.translateTextToMorseCode(message);
+        return textToMorseTranslator.translate(message);
     }
 
     @action.bound
-    translateTextToMorseCode() {
+    translate() {
         const message = this.translatedToMorseCode;
         this.morseCode = message.text;
     }

@@ -12,6 +12,7 @@ const PATHS = {
     HOME,
     ABOUT: createLink('ABOUT'),
     HELP: createLink('HELP'),
+    TRANSLATOR: createLink('TRANSLATOR'),
 };
 
 
