@@ -3,7 +3,7 @@ import ERRORS_CODE from '../entities/consts/ErrorsCode';
 
 const TEXT = 'TEXT';
 
-xdescribe('Save data to TextMessage', () => {
+describe('Save data to TextMessage', () => {
     let message = null;
 
     beforeEach(() => {

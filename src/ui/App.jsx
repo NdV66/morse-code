@@ -8,6 +8,7 @@ import NavbarApp from './nav/NavbarApp';
 import translatorStore from '../stores/translatorStore';
 import navbarStore from '../stores/navbarStore';
 import AboutPage from './pages/AboutPage';
+import { Footer } from './pages/footer/Footer';
 
 const iconContextStyle = {
     className: 'icon-style',
@@ -29,7 +30,7 @@ const App = () => <IconContext.Provider value={iconContextStyle}>
                 </main>
 
                 <footer>
-
+                    <Footer />
                 </footer>
 
             </Router>

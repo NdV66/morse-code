@@ -1,5 +1,5 @@
 import ERRORS_CODE from '../entities/consts/ErrorsCode';
-import {textToMorseTranslator} from '../entities/TextToMorseTranslator';
+import {textToMorseTranslator} from '../entities/domain/TextToMorseTranslator';
 import TextMessage from '../entities/models/TextMessage';
 
 const TEXT = 'TEXT';
@@ -8,7 +8,7 @@ const MORSE = '- . -..- -';
 const MORSE_ARRAY = ['-', '.', '-..-', '-'];
 const TEXT_WITH_DOESNT_EXIST_CHAR_IN_MORSE = 'mątwa';
 
-xdescribe('Translate text to morse code', () => {
+describe('Translate text to morse code', () => {
     let textMessage = null;
 
     beforeEach(() => {

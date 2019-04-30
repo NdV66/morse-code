@@ -1,6 +1,8 @@
 import { observable, computed, action } from 'mobx';
-import {textToMorseTranslator} from '../entities/TextToMorseTranslator';
+import { textToMorseTranslator } from '../entities/domain/TextToMorseTranslator';
+import { morseToTextTranslator } from '../entities/domain/MorseToTextTranslator';
 import TextMessage from '../entities/models/TextMessage';
+import MorseMessage from '../entities/models/MorseMessage';
 
 class TranslatorStore {
     @observable
@@ -25,10 +27,22 @@ class TranslatorStore {
         return textToMorseTranslator.translate(message);
     }
 
+    @computed
+    get translatedToNormalText() {
+        const message = new MorseMessage(this.morseCode);
+        return morseToTextTranslator.translate(message);
+    }
+
     @action.bound
-    translate() {
+    translateToMorseCode() {
         const message = this.translatedToMorseCode;
         this.morseCode = message.text;
+    }
+
+    @action.bound
+    translateToNormalText() {
+        const message = this.translatedToNormalText;
+        this.normalText = message.text;
     }
 }
 

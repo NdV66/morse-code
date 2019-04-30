@@ -23,7 +23,8 @@ class TranslatorPage extends React.Component {
     @action.bound
     _onClickTranslateButton() {
         try {
-            this.props.translatorStore.translate();
+            const store = this.props.translatorStore;
+            store.isCommonTextAreaFirst ? store.translateToMorseCode() : store.translateToNormalText();
         } catch(error) {
             console.log(error);
             this._handleError(error);

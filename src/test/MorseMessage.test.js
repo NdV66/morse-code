@@ -7,7 +7,7 @@ const UNCORRECT_MORSE_TOO_MUCH_SPACES = '-- ---  .-. ... .';
 
 const prepareTitleFOrUncorrectIt = (unorrectText) => `Should not save uncorrect morse message [${unorrectText}]`;
 
-xdescribe('Save data to MorseMessage', () => {
+describe('Save data to MorseMessage', () => {
     let message = null;
 
     beforeEach(() => {
