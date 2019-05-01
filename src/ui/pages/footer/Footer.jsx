@@ -7,7 +7,7 @@ import styles from './Footer.module.scss';
 
 const footerCssClass = `${styles.footer} pb-3 pt-3`;
 
-const ProjectLink = (props) => <Col md='12'>
+const ProjectLink = (props) => <Col md='12' className='no-spaces'>
     <a href={PATHS[props.id]}>
         <MdLocalActivity />{TEXTS[props.id]}
     </a>
@@ -15,20 +15,21 @@ const ProjectLink = (props) => <Col md='12'>
 
 export const Footer = () => <Container fluid className={footerCssClass}>
     <Row>
-        <Col>
+        <Col sm='12' md='6'>
             <h4>
                 <a href={PATHS.GITHUB}>{TEXTS.GITHUB}</a>
             </h4>
         </Col>
-        <Col>
-            <Col md='12'>
-                <h4>{TEXTS.OTHER_PROJECTS}</h4>
-            </Col>
+        <Col sm='12' md='6'>
+            <h4>{TEXTS.OTHER_PROJECTS}</h4>
             <ProjectLink id={'BE_STAR_ONLINE'} />
             <ProjectLink id={'MY_SITE'} />
             <ProjectLink id={'DEV_NAMES_GENERATOR'} />
             <ProjectLink id={'HERBACIANKA'} />
             <ProjectLink id={'THIS_SITE_CODE'} />
+        </Col>
+        <Col md='12'>
+            {TEXTS.AUTHOR}
         </Col>
     </Row>
 </Container>;

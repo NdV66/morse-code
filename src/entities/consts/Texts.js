@@ -1,5 +1,5 @@
 const TEXTS = {
-    NAME: 'TestName',
+    NAME: 'Morse Translator',
     ABOUT: 'About',
     HELP: 'Help',
     TRANSLATOR: 'Translator',
@@ -16,6 +16,7 @@ const TEXTS = {
     DEV_NAMES_GENERATOR: 'Funny names for git generator',
     HERBACIANKA: 'Handmade shop business card',
     THIS_SITE_CODE: 'Sources of this site',
+    AUTHOR: 'Created by NdV66, 2019'
 };
 
 export default TEXTS;

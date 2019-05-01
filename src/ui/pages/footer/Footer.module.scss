@@ -3,6 +3,7 @@
 .footer {
     background-color: $DARK;
     color: $THEME_COLOR_TEXT;
+    font-size: $BASE_FONT_SIZE * 0.85;
 
     a {
         color: $THEME_COLOR_TEXT;
@@ -12,7 +13,7 @@
     }
 
     h4 {
-        font-size: $BASE_FONT_SIZE * 1.1;
+        font-size: $BASE_FONT_SIZE;
         font-weight: bold;
     }
 }

@@ -22,11 +22,12 @@ class NavbarApp extends React.Component {
             <Navbar
             color='faded'
             expand='md'
+            light
             fixed='top'
             className={navbarCssClass}>
                 <NavbarBrand href='/'>{TEXTS.NAME}</NavbarBrand>
                 <NavbarToggler onClick={navbarStore.toggle} />
-                <Collapse isOpen={navbarStore.isOpen} navbar>
+                <Collapse isOpen={navbarStore.isOpen} navbar className={styles.custom_collapse}>
                     <Nav className='ml-auto' navbar>
                         <NavbarItem name={'TRANSLATOR'} />
                         <NavbarItem name={'ABOUT'} />

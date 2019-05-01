@@ -4,6 +4,7 @@ import { inject, observer } from 'mobx-react';
 import { Container, Col } from 'reactstrap';
 import { TextArea } from './TextArea';
 import { ButtonPanel } from './ButtonPanel';
+import { ELEMENTS_ID } from '../../../entities/consts/Paths';
 import TEXTS from '../../../entities/consts/Texts';
 import styles from './translatorPageStyle.module.scss';
 
@@ -83,13 +84,13 @@ class TranslatorPage extends React.Component {
     }
 
     render() {
-        const mdCols = {size: 8, offset: 2};
-        const smCols = {size: 12};
+        const lgCols = {size: 8, offset: 2};
+        const mdCols = {size: 12};
         const store = this.props.translatorStore;
         const containerCssClass = `${styles.translator_container} pb-3`;
 
-        return <Container fluid className={containerCssClass}>
-            <Col sm={smCols} md={mdCols}>
+        return <Container fluid className={containerCssClass} id={ELEMENTS_ID.TRANSLATOR}>
+            <Col lg={lgCols} md={mdCols}>
                 {this._rendertTextAreaInOrder(store)}
             </Col>
         </Container>;
