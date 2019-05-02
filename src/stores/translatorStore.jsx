@@ -44,6 +44,24 @@ class TranslatorStore {
         const message = this.translatedToNormalText;
         this.normalText = message.text;
     }
+
+    swapTextAreas() {
+        this.isCommonTextAreaFirst = !this.isCommonTextAreaFirst;
+    }
+
+    translate()  {
+        this.isCommonTextAreaFirst ? this.translateToMorseCode() : this.translateToNormalText();
+    }
+
+    @action
+    setNormalTextFromEvent(event) {
+        this.normalText = event.target.value;;
+    }
+
+    @action
+    setMorseCodeFromEvent(event) {
+        this.morseCode = event.target.value;
+    }
 }
 
 const translatorStore = new TranslatorStore();

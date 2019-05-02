@@ -1,0 +1,20 @@
+@import '../../../assets/scss/_variables';
+@import '../../../assets/scss/_generic';
+
+.about_page {
+    background-color: $THEME_COLOR_PRIMARY;
+    color: $THEME_COLOR_TEXT;
+
+    h2 {
+        color: $THEME_COLOR_TEXT;
+    }
+}
+
+.test {
+    $svgSize: $BASE_FONT_SIZE * 4;
+
+    svg {
+        height: $svgSize;
+        width: $svgSize;
+    }
+}

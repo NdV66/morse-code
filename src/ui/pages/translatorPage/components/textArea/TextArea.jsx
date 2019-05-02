@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './translatorPageStyle.module.scss';
+import styles from './TextArea.module.scss';
 
 export const TextArea = (props) => <div>
     <h3 className='h3-light'>{props.title}</h3>

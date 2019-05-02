@@ -94,4 +94,10 @@
     color: $THEME_COLOR_TEXT;
     font-size: $BASE_FONT_SIZE * 1.4;
     padding-right: $SMALL_PADDING;
+    vertical-align: middle;
+}
+
+.base-top-bottom-padding {
+    padding-top: $BASE_PADDING;
+    padding-bottom: $BASE_PADDING;
 }

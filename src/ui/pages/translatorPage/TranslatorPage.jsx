@@ -2,8 +2,8 @@ import React from 'react';
 import { action } from 'mobx';
 import { inject, observer } from 'mobx-react';
 import { Container, Col } from 'reactstrap';
-import { TextArea } from './TextArea';
-import { ButtonPanel } from './ButtonPanel';
+import { TextArea } from './components/textArea/TextArea';
+import { ButtonPanel } from './components/buttonPanel/ButtonPanel';
 import { ELEMENTS_ID } from '../../../entities/consts/Paths';
 import TEXTS from '../../../entities/consts/Texts';
 import styles from './translatorPageStyle.module.scss';
@@ -13,19 +13,18 @@ import styles from './translatorPageStyle.module.scss';
 class TranslatorPage extends React.Component {
     @action.bound
     _handleNormalTextAreaChange(event) {
-        this.props.translatorStore.normalText = event.target.value;
+        this.props.translatorStore.setNormalTextFromEvent(event);
     }
 
     @action.bound
     _handleMorseCodeTextAreaChange(event) {
-        this.props.translatorStore.morseCode = event.target.value;
+        this.props.translatorStore.setMorseCodeFromEvent(event);
     }
 
     @action.bound
     _onClickTranslateButton() {
         try {
-            const store = this.props.translatorStore;
-            store.isCommonTextAreaFirst ? store.translateToMorseCode() : store.translateToNormalText();
+           this.props.translatorStore.translate();
         } catch(error) {
             console.log(error);
             this._handleError(error);
@@ -34,8 +33,7 @@ class TranslatorPage extends React.Component {
 
     @action.bound
     _onClickSwapButton() {
-        const {translatorStore} = this.props;
-        translatorStore.isCommonTextAreaFirst = !translatorStore.isCommonTextAreaFirst;
+       this.props.translatorStore.swapTextAreas();
     }
 
     _handleError(error) {
