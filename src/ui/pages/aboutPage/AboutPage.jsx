@@ -16,7 +16,7 @@ class AboutPage extends React.Component {
             <p className='text-justify'>
                 {TEXTS.ABOUT_TEXT}
             </p>
-            <div className={`${styles.test} text-center`}>
+            <div className='bigger-icon text-center'>
                 <MdLocalFlorist />
             </div>
         </Container>;

@@ -33,11 +33,11 @@
 }
 
 .bg-light {
-    background-color: $BACKGROUND_COLOR;
+    background-color: $BACKGROUND_COLOR !important;
 }
 
 .bg-dark {
-    background-color: $BACKGROUND_COLOR_ACTIVE;
+    background-color: $BACKGROUND_COLOR_ACTIVE !important;
 }
 
 .radius {
@@ -100,4 +100,13 @@
 .base-top-bottom-padding {
     padding-top: $BASE_PADDING;
     padding-bottom: $BASE_PADDING;
+}
+
+.bigger-icon {
+    $svgSize: $BASE_FONT_SIZE * 4;
+
+    svg {
+        height: $svgSize;
+        width: $svgSize;
+    }
 }

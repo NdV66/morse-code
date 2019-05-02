@@ -8,6 +8,7 @@ import NavbarApp from './nav/NavbarApp';
 import translatorStore from '../stores/translatorStore';
 import navbarStore from '../stores/navbarStore';
 import AboutPage from './pages/aboutPage/AboutPage';
+import HelpPage from './pages/helpPage/HelpPage';
 import { Footer } from './pages/footer/Footer';
 
 const iconContextStyle = {
@@ -19,21 +20,22 @@ const App = () => <IconContext.Provider value={iconContextStyle}>
             <Provider
                 translatorStore={translatorStore}
                 navbarStore={navbarStore}>
-            <Router>
-                <header>
-                    <NavbarApp />
-                </header>
+                <Router>
+                    <header>
+                        <NavbarApp />
+                    </header>
 
-                <main>
-                    <TranslatorPage />
-                    <AboutPage />
-                </main>
+                    <main>
+                        <TranslatorPage />
+                        <AboutPage />
+                        <HelpPage />
+                    </main>
 
-                <footer>
-                    <Footer />
-                </footer>
+                    <footer>
+                        <Footer />
+                    </footer>
 
-            </Router>
+                </Router>
         </Provider>
     </Container>
 </IconContext.Provider>;

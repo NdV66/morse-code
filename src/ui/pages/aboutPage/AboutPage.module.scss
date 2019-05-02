@@ -9,12 +9,3 @@
         color: $THEME_COLOR_TEXT;
     }
 }
-
-.test {
-    $svgSize: $BASE_FONT_SIZE * 4;
-
-    svg {
-        height: $svgSize;
-        width: $svgSize;
-    }
-}
