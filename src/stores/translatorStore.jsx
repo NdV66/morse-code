@@ -3,6 +3,7 @@ import { textToMorseTranslator } from '../entities/domain/TextToMorseTranslator'
 import { morseToTextTranslator } from '../entities/domain/MorseToTextTranslator';
 import TextMessage from '../entities/models/TextMessage';
 import MorseMessage from '../entities/models/MorseMessage';
+import { isError } from 'util';
 
 class TranslatorStore {
     @observable
@@ -16,6 +17,14 @@ class TranslatorStore {
 
     @observable
     isCommonTextAreaFirst = true;
+
+    @observable
+    errorCode = '';
+
+    @computed
+    get isError() {
+        return !!this.errorCode;
+    }
 
     /**
      * @throws {Error} CHAR_DOESNT_EXIST from translator
@@ -61,6 +70,16 @@ class TranslatorStore {
     @action
     setMorseCodeFromEvent(event) {
         this.morseCode = event.target.value;
+    }
+
+    @action.bound
+    setErrorCode(errorCode) {
+        this.errorCode = errorCode;
+    }
+
+    @action.bound
+    eraseErrorCode() {
+        this.errorCode = '';
     }
 }
 

@@ -4,7 +4,7 @@ import createBiggerIcon from './BiggerIcon';
 
 class DescriptionPanel extends React.Component {
     _createElement(key, content) {
-        return <p {...key} dangerouslySetInnerHTML={{__html: content}} />;
+        return <p key={key} dangerouslySetInnerHTML={{__html: content}} />;
     }
 
     _createParagraphs(texts) {

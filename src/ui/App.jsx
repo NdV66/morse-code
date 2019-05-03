@@ -34,7 +34,6 @@ const App = () => <IconContext.Provider value={iconContextStyle}>
                     <footer>
                         <Footer />
                     </footer>
-
                 </Router>
         </Provider>
     </Container>

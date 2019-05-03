@@ -17,6 +17,13 @@ const TEXTS = {
     HERBACIANKA: 'Handmade shop business card',
     THIS_SITE_CODE: 'Sources of this site',
     AUTHOR: 'Created by NdV66, 2019',
+    ERRORS_DESC: {
+        ERROR_HEADER: 'Error',
+        DATA_SHOULD_BE_STRING: 'Data should be string.',
+        DATA_SHOULD_BE_MORSE:  'Data should be morse code.',
+        CHAR_DOESNT_EXIST: 'One of the typed chars is not supoported by translator.',
+        MORSE_SIGN_ISNT_SUPPORTED: 'One of the typed morse code symbols is not supoported by translator.',
+    },
     ABOUT_HEADER: 'About',
     ABOUT_TEXT: {
         APP_HEADER: `<h4>This app</h4>`,

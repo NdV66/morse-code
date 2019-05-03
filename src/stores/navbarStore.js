@@ -1,10 +1,13 @@
-import { observable } from 'mobx';
+import { observable, action } from 'mobx';
 
 class NavbarStore {
     @observable
     isOpen = false;
 
-    toggle = () => this.isOpen = !this.isOpen;
+    @action.bound
+    toggle() {
+        this.isOpen = !this.isOpen;
+    }
 }
 
 const navbarStore = new NavbarStore();

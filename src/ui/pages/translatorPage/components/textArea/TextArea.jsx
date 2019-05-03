@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './TextArea.module.scss';
 
-export const TextArea = (props) => <div>
+const TextArea = (props) => <div>
     <h3 className='h3-light'>{props.title}</h3>
     <textarea
         className={styles.text_area}
@@ -12,4 +12,6 @@ export const TextArea = (props) => <div>
         placeholder={props.placeholder}
         readOnly={props.readOnly}
     />
-    </div>;
+</div>;
+
+export default TextArea;

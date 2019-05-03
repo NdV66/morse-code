@@ -1,9 +1,11 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { action } from 'mobx';
 import { inject, observer } from 'mobx-react';
 import { Container, Col } from 'reactstrap';
-import { TextArea } from './components/textArea/TextArea';
-import { ButtonPanel } from './components/buttonPanel/ButtonPanel';
+import TextArea from './components/textArea/TextArea';
+import ErrorPopup from '../../common/ErrorPopup';
+import ButtonPanel from './components/buttonPanel/ButtonPanel';
 import { ELEMENTS_ID } from '../../../entities/consts/Paths';
 import TEXTS from '../../../entities/consts/Texts';
 import styles from './translatorPageStyle.module.scss';
@@ -26,7 +28,6 @@ class TranslatorPage extends React.Component {
         try {
            this.props.translatorStore.translate();
         } catch(error) {
-            console.log(error);
             this._handleError(error);
         }
     }
@@ -37,7 +38,8 @@ class TranslatorPage extends React.Component {
     }
 
     _handleError(error) {
-
+        console.log(error);
+        this.props.translatorStore.setErrorCode(error.message);
     }
 
     _renderNormalTextArea(store) {
@@ -83,13 +85,25 @@ class TranslatorPage extends React.Component {
         return elements;
     }
 
+    _renderErrorPortal() {
+        const store = this.props.translatorStore;
+        return <ErrorPopup
+            isModal={store.isError}
+            onCancel={store.eraseErrorCode}
+            body={TEXTS.ERRORS_DESC[store.errorCode]}
+            header={TEXTS.ERRORS_DESC.ERROR_HEADER}
+        />;
+    }
+
     render() {
         const lgCols = {size: 8, offset: 2};
         const mdCols = {size: 12};
         const store = this.props.translatorStore;
         const containerCssClass = `${styles.translator_container} pb-3`;
+        const errorPortal = store.isError ? this._renderErrorPortal() : null;
 
         return <Container fluid className={containerCssClass} id={ELEMENTS_ID.TRANSLATOR}>
+            {errorPortal}
             <Col lg={lgCols} md={mdCols}>
                 {this._rendertTextAreaInOrder(store)}
             </Col>
