@@ -49,6 +49,7 @@ class TranslatorPage extends React.Component {
             onChange={this._handleNormalTextAreaChange}
             title={TEXTS.TEXT_LABEL}
             key={id}
+            readOnly={!store.isCommonTextAreaFirst}
         />;
     }
 
@@ -61,6 +62,7 @@ class TranslatorPage extends React.Component {
             onChange={this._handleMorseCodeTextAreaChange}
             title={TEXTS.MORSE_LABEL}
             key='id'
+            readOnly={store.isCommonTextAreaFirst}
         />;
     }
 
@@ -77,8 +79,8 @@ class TranslatorPage extends React.Component {
         const morseCodeArea = this._renderMorseTextArea(store);
         const buttonPanel = this._renderButtonPanel(store);
         const {isCommonTextAreaFirst} = store;
-
-        return isCommonTextAreaFirst ? [normalTextArea, buttonPanel, morseCodeArea] : [morseCodeArea, buttonPanel, normalTextArea];
+        const elements = isCommonTextAreaFirst ? [normalTextArea, buttonPanel, morseCodeArea] : [morseCodeArea, buttonPanel, normalTextArea];
+        return elements;
     }
 
     render() {

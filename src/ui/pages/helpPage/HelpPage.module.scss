@@ -7,7 +7,6 @@
 }
 
 .help_icon {
-    @extend .bigger-icon;
     svg {
         fill: $THEME_COLOR_TEXT_DARK;
     }

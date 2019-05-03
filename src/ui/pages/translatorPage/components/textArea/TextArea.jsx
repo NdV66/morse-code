@@ -10,5 +10,6 @@ export const TextArea = (props) => <div>
         value={props.value}
         onChange={props.onChange}
         placeholder={props.placeholder}
+        readOnly={props.readOnly}
     />
     </div>;

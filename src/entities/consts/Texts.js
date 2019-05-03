@@ -18,9 +18,28 @@ const TEXTS = {
     THIS_SITE_CODE: 'Sources of this site',
     AUTHOR: 'Created by NdV66, 2019',
     ABOUT_HEADER: 'About',
-    ABOUT_TEXT: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam justo, consequat at bibendum bibendum, volutpat ut dolor. Fusce semper, quam eu luctus dapibus, tellus felis efficitur lorem, ac dictum tortor quam vel metus. Aenean volutpat in mauris sit amet blandit. Cras orci dui, vestibulum sed tincidunt id, lobortis eget arcu. Curabitur faucibus suscipit sollicitudin. Duis a sollicitudin lectus. Quisque ac bibendum ex. Maecenas dignissim enim turpis, interdum rhoncus dolor bibendum ac. Donec vitae euismod magna. Pellentesque pellentesque sapien sed mollis tempus. Sed mattis orci ipsum, eu viverra diam mattis ut. ',
+    ABOUT_TEXT: {
+        APP_HEADER: `<h4>This app</h4>`,
+        APP: `This page is created to demonstrate how the morse code work and how fun it is.
+            Now it could be only hobby for you, but in the past to know it was the base to send the quick messages to the people, who were living very far from you.
+            If you want, you can try to learn it or just have fun with this translator.
+            This project supports translate from and to this code system, using the text areas above.`,
+        AUTHOR_HEADER: `<h4>Author</h4>`,
+        AUTHOR: `My nickname is Narin and i am a front-end devloper for few years.
+                I like this job, I like its weird technologies - like ReactJS or pure JavaScript.
+                For me it is really nice to create something for end users.
+                If you prefer to see more of my project, look at the footer of this page. There are the links to them and to my GitHub.`,
+    },
     HELP_HEADER: 'Help',
-    HELP_TEXT: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam justo, consequat at bibendum bibendum, volutpat ut dolor. Fusce semper, quam eu luctus dapibus, tellus felis efficitur lorem, ac dictum tortor quam vel metus. Aenean volutpat in mauris sit amet blandit. Cras orci dui, vestibulum sed tincidunt id, lobortis eget arcu. Curabitur faucibus suscipit sollicitudin. Duis a sollicitudin lectus. Quisque ac bibendum ex. Maecenas dignissim enim turpis, interdum rhoncus dolor bibendum ac. Donec vitae euismod magna. Pellentesque pellentesque sapien sed mollis tempus. Sed mattis orci ipsum, eu viverra diam mattis ut. ',
+    HELP_TEXT: {
+        USING_HEADER: `<h4>Usage</h4>`,
+        USING: `To translate from 'normal' text to morse code, type text in <strong>'Common Text' textarea</strong>.
+            Then click <strong>'Translate' button</strong> - the result will be as 'common' text, able to read.
+            For the other case, click <strong>'Swap' button</strong>. This will change the order ot the text areas.
+            Now the <strong>'Morse Code' text area</strong> is first. Type there your morse code and then click <strong>'Translate' Button</strong>.`,
+        FORMAT_HEADER: `<h4>Formatting</h4>`,
+        FORMAT: ``,
+    },
 };
 
 export default TEXTS;

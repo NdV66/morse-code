@@ -1,5 +1,4 @@
 import { SPACE_BETWEEN_CHARS } from '../consts/MorseCodeMapping';
-import MorseMessage from '../models/MorseMessage';
 import TextMessage from '../models/TextMessage';
 import { searchSymbol } from '../models/MorseTree';
 
