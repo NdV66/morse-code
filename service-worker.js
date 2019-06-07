@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/NdV66/morse-code/precache-manifest.d797840733b9d759b86c50e3dcef8226.js"
+  "/morse-code/precache-manifest.f8b5bcd908f2ca64dce67f1935d32e81.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/NdV66/morse-code/index.html", {
+workbox.routing.registerNavigationRoute("/morse-code/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
