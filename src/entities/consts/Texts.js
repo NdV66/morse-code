@@ -45,7 +45,7 @@ const TEXTS = {
             For the other case, click <strong>'Swap' button</strong>. This will change the order ot the text areas.
             Now the <strong>'Morse Code' text area</strong> is first. Type there your morse code and then click <strong>'Translate' Button</strong>.`,
         FORMAT_HEADER: `<h4>Formatting</h4>`,
-        FORMAT: ``,
+        FORMAT: `One typed space is equal to space between words in text or code.`,
     },
 };
 

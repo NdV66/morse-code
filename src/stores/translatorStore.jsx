@@ -3,7 +3,6 @@ import { textToMorseTranslator } from '../entities/domain/TextToMorseTranslator'
 import { morseToTextTranslator } from '../entities/domain/MorseToTextTranslator';
 import TextMessage from '../entities/models/TextMessage';
 import MorseMessage from '../entities/models/MorseMessage';
-import { isError } from 'util';
 
 class TranslatorStore {
     @observable

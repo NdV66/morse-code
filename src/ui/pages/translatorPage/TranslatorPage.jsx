@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { action } from 'mobx';
 import { inject, observer } from 'mobx-react';
 import { Container, Col } from 'reactstrap';
