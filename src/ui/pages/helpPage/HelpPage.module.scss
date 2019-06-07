@@ -1,0 +1,13 @@
+@import '../../../assets/scss/_variables';
+@import '../../../assets/scss/_generic';
+
+.help_page {
+    @extend .bg-light;
+    color: $THEME_COLOR_TEXT_DARK;
+}
+
+.help_icon {
+    svg {
+        fill: $THEME_COLOR_TEXT_DARK;
+    }
+}

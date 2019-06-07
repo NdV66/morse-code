@@ -1,0 +1,23 @@
+@import '../../../assets/scss/_variables';
+@import '../../../assets/scss/_generic';
+
+.translator_container {
+    @extend .bg-light;
+    padding-top: $NAVBAR_HEIGHT + $BASE_PADDING;
+    padding-bottom: $BASE_PADDING;
+
+    // position: relative;
+    // &::before {
+    //     content: '';
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //     background-image: url('../../../assets/images/bg3.svg');
+    //     background-repeat: no-repeat;
+    //     background-size: cover;
+    //     background-position: center;
+    // }
+}
+

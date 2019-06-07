@@ -1,0 +1,112 @@
+@import './variables';
+
+.active-generic {
+    background-color: $THEME_COLOR_ACTIVE !important;
+}
+
+.active-hover {
+    background-color: $THEME_COLOR_PRIMARY !important;
+    border-radius: .25rem;
+    border: 1px solid $THEME_COLOR_PRIMARY;
+    color: $THEME_COLOR_TEXT;
+}
+
+.text-danger {
+    color: $DANGER;
+}
+
+.rounded {
+    border-radius: 50% !important;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.no-spaces {
+    @extend .no-margin;
+    @extend .no-padding;
+}
+
+.bg-light {
+    background-color: $BACKGROUND_COLOR !important;
+}
+
+.bg-dark {
+    background-color: $BACKGROUND_COLOR_ACTIVE !important;
+}
+
+.radius {
+    border-radius: $RADIUS !important;
+}
+
+.btn {
+    @extend .radius;
+    border: none;
+    outline: none !important;
+    margin: 1px;
+    padding: 10px;
+    font-size: $BASE_FONT_SIZE;
+
+    &:hover, &:active, &:focus {
+        outline: none !important;
+    }
+}
+
+.btn-primary {
+    @extend .active-hover;
+    border: 1px solid $THEME_COLOR_PRIMARY !important;
+
+    &:hover, &:active, &:focus {
+        box-shadow: none !important;
+        border: 1px solid $THEME_COLOR_PRIMARY !important;
+        @extend .active-generic;
+    }
+}
+
+.btn-danger {
+    background-color: $DANGER;
+    color: $THEME_COLOR_TEXT;
+
+    &:hover, &:active, &:focus {
+        background-color: $DANGER_ACTIVE;
+        color: $THEME_COLOR_TEXT;
+    }
+}
+
+.common-padding {
+    padding: $SMALL_PADDING $MEDIUM_PADDING;
+}
+
+.h3-light {
+    @extend .no-margin;
+    font-size: $BASE_FONT_SIZE * 1.2;
+    color: $THEME_COLOR_ACTIVE;
+    width: 100%;
+    padding-bottom: $MEDIUM_PADDING;
+}
+
+.icon-style {
+    color: $THEME_COLOR_TEXT;
+    font-size: $BASE_FONT_SIZE * 1.4;
+    padding-right: $SMALL_PADDING;
+    vertical-align: middle;
+}
+
+.base-top-bottom-padding {
+    padding-top: $BASE_PADDING;
+    padding-bottom: $BASE_PADDING;
+}
+
+.bigger-icon {
+    $svgSize: $BASE_FONT_SIZE * 4;
+
+    svg {
+        height: $svgSize;
+        width: $svgSize;
+    }
+}

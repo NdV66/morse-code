@@ -1,0 +1,19 @@
+@import '../../../assets/scss/variables';
+
+.footer {
+    background-color: $DARK;
+    color: $THEME_COLOR_TEXT;
+    font-size: $BASE_FONT_SIZE * 0.85;
+
+    a {
+        color: $THEME_COLOR_TEXT;
+        &:active, &:hover, &:visited, &:focus, &:link {
+            color: $THEME_COLOR_TEXT;
+        }
+    }
+
+    h4 {
+        font-size: $BASE_FONT_SIZE;
+        font-weight: bold;
+    }
+}

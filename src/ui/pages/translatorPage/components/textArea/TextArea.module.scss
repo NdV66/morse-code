@@ -1,0 +1,12 @@
+@import '../../../../../assets/scss/_variables';
+@import '../../../../../assets/scss/_generic';
+
+.text_area {
+    $height: $BASE_FONT_SIZE * 6;
+    @extend .common-padding;
+    @extend .radius;
+    width: 100%;
+    min-height: $height;
+    border: 1px solid $THEME_COLOR_PRIMARY;
+    margin-bottom: 10px;
+}
